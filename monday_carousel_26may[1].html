@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amar Media — Monday Carousel</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #1a1a1a; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; font-family: 'Georgia', serif; padding: 20px; gap: 20px; }
+  .info { color: rgba(255,255,255,0.5); font-size: 13px; letter-spacing: 2px; text-transform: uppercase; text-align: center; }
+  .slide-container { position: relative; }
+  .slide { display: none; width: 480px; height: 600px; background: #3D0C0C; position: relative; overflow: hidden; flex-direction: column; justify-content: center; align-items: center; padding: 44px 40px; }
+  .slide.active { display: flex; }
+  .sn { position: absolute; top: 22px; right: 26px; font-size: 11px; letter-spacing: 3px; color: rgba(201,169,110,0.5); }
+  .lm { position: absolute; top: 22px; left: 26px; font-size: 11px; letter-spacing: 3px; color: rgba(201,169,110,0.45); text-transform: uppercase; }
+  .tg { position: absolute; bottom: 24px; left: 0; right: 0; text-align: center; font-size: 10px; letter-spacing: 2px; color: rgba(201,169,110,0.4); }
+  .hero { font-size: 34px; font-weight: 700; color: #C9A96E; text-align: center; line-height: 1.25; letter-spacing: 1px; margin: 0; position: relative; z-index: 2; }
+  .divider { width: 60px; height: 0.5px; background: #C9A96E; opacity: 0.5; margin: 22px auto; position: relative; z-index: 2; }
+  .subtext { font-size: 12px; color: rgba(201,169,110,0.6); text-align: center; letter-spacing: 3px; text-transform: uppercase; position: relative; z-index: 2; }
+  .headline { font-size: 26px; font-weight: 700; color: #C9A96E; text-align: center; line-height: 1.3; margin: 0; position: relative; z-index: 2; }
+  .body-text { font-size: 13px; color: rgba(201,169,110,0.65); text-align: center; line-height: 1.9; margin-top: 14px; letter-spacing: 0.5px; position: relative; z-index: 2; }
+  .accent-bg { font-size: 160px; color: rgba(201,169,110,0.04); font-weight: 700; position: absolute; bottom: -20px; right: -10px; z-index: 1; line-height: 1; }
+  .bullet-wrap { width: 100%; margin-top: 18px; position: relative; z-index: 2; }
+  .bullet { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 16px; }
+  .bullet-line { width: 20px; height: 0.5px; background: #C9A96E; opacity: 0.6; margin-top: 10px; flex-shrink: 0; }
+  .bullet-text { font-size: 14px; color: rgba(201,169,110,0.75); line-height: 1.5; letter-spacing: 0.5px; }
+  .cta-main { font-size: 30px; font-weight: 700; color: #C9A96E; text-align: center; line-height: 1.25; position: relative; z-index: 2; }
+  .cta-sub { font-size: 12px; color: rgba(201,169,110,0.55); text-align: center; letter-spacing: 4px; text-transform: uppercase; margin-top: 18px; position: relative; z-index: 2; }
+  .nav { display: flex; justify-content: center; align-items: center; gap: 16px; }
+  .nav button { background: none; border: 0.5px solid rgba(201,169,110,0.4); color: #C9A96E; padding: 10px 24px; font-size: 12px; letter-spacing: 2px; cursor: pointer; font-family: 'Georgia', serif; border-radius: 2px; }
+  .nav button:hover { background: rgba(201,169,110,0.08); }
+  .dots { display: flex; gap: 6px; justify-content: center; }
+  .dot { width: 5px; height: 5px; border-radius: 50%; background: rgba(201,169,110,0.25); }
+  .dot.active { background: #C9A96E; }
+  .slide-label { color: rgba(201,169,110,0.6); font-size: 12px; letter-spacing: 2px; text-align: center; }
+</style>
+</head>
+<body>
+<p class="info">📸 Screenshot each slide to post on Instagram</p>
+
+<div class="slide-container">
+  <div class="slide active" id="s1">
+    <svg style="position:absolute;inset:0;width:100%;height:100%;z-index:1;" preserveAspectRatio="xMidYMid slice" viewBox="0 0 480 600" xmlns="http://www.w3.org/2000/svg">
+      <rect width="480" height="600" fill="#3D0C0C"/>
+      <line x1="0" y1="0" x2="480" y2="600" stroke="rgba(201,169,110,0.06)" stroke-width="48"/>
+      <line x1="96" y1="0" x2="576" y2="600" stroke="rgba(201,169,110,0.03)" stroke-width="26"/>
+      <line x1="480" y1="0" x2="0" y2="600" stroke="rgba(201,169,110,0.05)" stroke-width="38"/>
+      <line x1="384" y1="0" x2="-96" y2="600" stroke="rgba(201,169,110,0.025)" stroke-width="18"/>
+      <rect width="480" height="600" fill="rgba(28,4,4,0.44)"/>
+    </svg>
+    <div class="lm">अमर</div><div class="sn">01 / 05</div>
+    <div class="accent-bg">अ</div>
+    <p class="hero">Dikh nahi rahe toh bik nahi rahe!</p>
+    <div class="divider"></div>
+    <p class="subtext">Swipe to know why →</p>
+    <p class="tg">अमर रहो। अमर बेचो।</p>
+  </div>
+
+  <div class="slide" id="s2">
+    <svg style="position:absolute;inset:0;width:100%;height:100%;z-index:1;" preserveAspectRatio="xMidYMid slice" viewBox="0 0 480 600" xmlns="http://www.w3.org/2000/svg">
+      <rect width="480" height="600" fill="#3D0C0C"/>
+      <line x1="0" y1="0" x2="480" y2="600" stroke="rgba(201,169,110,0.06)" stroke-width="48"/>
+      <line x1="480" y1="0" x2="0" y2="600" stroke="rgba(201,169,110,0.05)" stroke-width="38"/>
+      <rect width="480" height="600" fill="rgba(28,4,4,0.44)"/>
+    </svg>
+    <div class="lm">अमर</div><div class="sn">02 / 05</div>
+    <div class="accent-bg">ब</div>
+    <p class="headline">You post.<br/>Nobody buys!</p>
+    <div class="divider"></div>
+    <p class="body-text">Most Mumbai fashion brands post daily — but without strategy, it's just noise.<br/><br/>Posting is not a plan.<br/>Content without intent doesn't convert.</p>
+    <p class="tg">अमर रहो। अमर बेचो।</p>
+  </div>
+
+  <div class="slide" id="s3">
+    <svg style="position:absolute;inset:0;width:100%;height:100%;z-index:1;" preserveAspectRatio="xMidYMid slice" viewBox="0 0 480 600" xmlns="http://www.w3.org/2000/svg">
+      <rect width="480" height="600" fill="#3D0C0C"/>
+      <line x1="0" y1="0" x2="480" y2="600" stroke="rgba(201,169,110,0.06)" stroke-width="48"/>
+      <line x1="192" y1="0" x2="672" y2="600" stroke="rgba(201,169,110,0.03)" stroke-width="22"/>
+      <line x1="480" y1="0" x2="0" y2="600" stroke="rgba(201,169,110,0.05)" stroke-width="38"/>
+      <rect width="480" height="600" fill="rgba(28,4,4,0.44)"/>
+    </svg>
+    <div class="lm">अमर</div><div class="sn">03 / 05</div>
+    <div class="accent-bg">म</div>
+    <p class="headline">Meet<br/>Amar Media!</p>
+    <div class="divider"></div>
+    <p class="body-text">A content & social media agency built exclusively for fashion and home lifestyle brands in Mumbai.</p>
+    <p class="tg">अमर रहो। अमर बेचो।</p>
+  </div>
+
+  <div class="slide" id="s4">
+    <svg style="position:absolute;inset:0;width:100%;height:100%;z-index:1;" preserveAspectRatio="xMidYMid slice" viewBox="0 0 480 600" xmlns="http://www.w3.org/2000/svg">
+      <rect width="480" height="600" fill="#3D0C0C"/>
+      <line x1="0" y1="0" x2="480" y2="600" stroke="rgba(201,169,110,0.06)" stroke-width="48"/>
+      <line x1="480" y1="0" x2="0" y2="600" stroke="rgba(201,169,110,0.05)" stroke-width="38"/>
+      <rect width="480" height="600" fill="rgba(28,4,4,0.44)"/>
+    </svg>
+    <div class="lm">अमर</div><div class="sn">04 / 05</div>
+    <div class="accent-bg">र</div>
+    <p class="headline">We create content<br/>that sells!</p>
+    <div class="divider"></div>
+    <div class="bullet-wrap">
+      <div class="bullet"><div class="bullet-line"></div><div class="bullet-text">Reels & Video Content</div></div>
+      <div class="bullet"><div class="bullet-line"></div><div class="bullet-text">Social Media Strategy</div></div>
+      <div class="bullet"><div class="bullet-line"></div><div class="bullet-text">Brand Storytelling</div></div>
+    </div>
+    <p class="tg">अमर रहो। अमर बेचो।</p>
+  </div>
+
+  <div class="slide" id="s5">
+    <svg style="position:absolute;inset:0;width:100%;height:100%;z-index:1;" preserveAspectRatio="xMidYMid slice" viewBox="0 0 480 600" xmlns="http://www.w3.org/2000/svg">
+      <rect width="480" height="600" fill="#3D0C0C"/>
+      <line x1="0" y1="0" x2="480" y2="600" stroke="rgba(201,169,110,0.06)" stroke-width="48"/>
+      <line x1="480" y1="0" x2="0" y2="600" stroke="rgba(201,169,110,0.05)" stroke-width="38"/>
+      <line x1="384" y1="0" x2="-96" y2="600" stroke="rgba(201,169,110,0.025)" stroke-width="18"/>
+      <rect width="480" height="600" fill="rgba(28,4,4,0.44)"/>
+    </svg>
+    <div class="lm">अमर</div><div class="sn">05 / 05</div>
+    <div class="accent-bg">अ</div>
+    <p class="cta-main">Ready to make your brand अमर!</p>
+    <div class="divider"></div>
+    <p class="cta-sub">DM us today</p>
+    <p class="tg">अमर रहो। अमर बेचो।</p>
+  </div>
+</div>
+
+<p class="slide-label" id="label">Slide 1 of 5</p>
+<div class="nav">
+  <button onclick="ch(-1)">← Prev</button>
+  <button onclick="ch(1)">Next →</button>
+</div>
+<div class="dots">
+  <div class="dot active" id="d0"></div>
+  <div class="dot" id="d1"></div>
+  <div class="dot" id="d2"></div>
+  <div class="dot" id="d3"></div>
+  <div class="dot" id="d4"></div>
+</div>
+<p class="info">Open in Chrome · Screenshot each slide · Post on Instagram</p>
+
+<script>
+  let c = 0;
+  const slides = document.querySelectorAll('.slide');
+  const dots = document.querySelectorAll('.dot');
+  function ch(d) {
+    slides[c].classList.remove('active');
+    dots[c].classList.remove('active');
+    c = (c + d + slides.length) % slides.length;
+    slides[c].classList.add('active');
+    dots[c].classList.add('active');
+    document.getElementById('label').textContent = 'Slide ' + (c+1) + ' of 5';
+  }
+</script>
+</body>
+</html>
